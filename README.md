@@ -85,6 +85,9 @@ $ cd small-web-app
 $ pip -V
 # Instale a dependência
 $ pip install -r requirements.txt
+# Inicie o servidor
+$ gunicorn server:app --reload
+# Por padrão, será aberto em http://127.0.0.1:8000
   ```
 
 </div>

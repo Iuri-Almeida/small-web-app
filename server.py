@@ -1,10 +1,15 @@
 """
     Projeto: Small Web App
+
     Autor: Iuri Lopes Almeida
+
     GitHub: https://github.com/Iuri-Almeida
+
     Objetivo: Aprender como criar um web app sem usar framework
+
     Dependência:
         - gunicorn -> pip install gunicorn (https://gunicorn.org/)
+
     Ajuda: https://www.youtube.com/watch?v=fe9t9DGPBuE
 
     Obs.:
