@@ -86,7 +86,7 @@ $ pip -V
 # Instale a dependência
 $ pip install -r requirements.txt
 # Inicie o servidor
-$ gunicorn server:app --reload
+$ python main.py
 # Por padrão, será aberto em http://127.0.0.1:8000
   ```
 

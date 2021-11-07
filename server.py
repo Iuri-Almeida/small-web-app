@@ -12,35 +12,19 @@
 
     Ajuda: https://www.youtube.com/watch?v=fe9t9DGPBuE
 
-    Obs.:
+    Obs. 01:
         - gunicorn -> Web Server Gateway Interface (WSGI)
         - WSGI -> cuida dos requests e procura a funcão para renderizar a página
+
+    Obs. 02: Pode usar um dos comandos abaixo para iniciar o servidor
+        - gunicorn server:app --reload
+        - python main.py
 """
-from typing import List
+from typing import Callable, List, Tuple
+from routes import home, contact, not_found
 
 
-def render_template(template: str = 'index.html', context: dict = None) -> str:
-
-    with open(f'pages/{template}', 'r') as file:
-        html = file.read()
-        html = html.format(**context or {})
-
-    return html
-
-
-def home(context: dict = None) -> str:
-    return render_template('index.html', context or {})
-
-
-def contact(context: dict = None) -> str:
-    return render_template('contact.html', context or {})
-
-
-def not_found(context: dict = None) -> str:
-    return render_template('404.html', context or {})
-
-
-def app(environ: dict, start_response) -> List[bytes]:
+def app(environ: dict, start_response: Callable[[str, List[Tuple[str, str]]], None]) -> List[bytes]:
 
     path = environ.get('PATH_INFO')
 
