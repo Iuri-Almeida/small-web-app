@@ -1,6 +1,6 @@
 def render_template(template: str = 'index.html', context: dict = None) -> str:
 
-    with open(f'pages/{template}', 'r') as file:
+    with open(f'app/pages/{template}', 'r') as file:
         html = file.read()
         html = html.format(**context or {})
 

@@ -38,13 +38,11 @@ def app(environ: dict, start_response: Callable[[str, List[Tuple[str, str]]], No
         name = 'Iuri'
         age = 22
         email = 'iurilopesalmeida@gmail.com'
-        cpf = '178.240.817-70'
 
         data = contact({
             'name': name,
             'age': age,
             'email': email,
-            'cpf': cpf
         })
     else:  # other pages
         data = not_found({'path': path})
