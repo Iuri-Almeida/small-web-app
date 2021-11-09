@@ -31,6 +31,5 @@ class Application(BaseApplication, ABC):
 if __name__ == '__main__':
     params = {
         'bind': '127.0.0.1:8000',
-        'reload': True
     }
     Application(app, params).run()
